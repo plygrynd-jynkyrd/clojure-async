@@ -1,4 +1,4 @@
-version: "2"
+version: "2.2"
 services:
   producer:
     image: node:12
@@ -7,6 +7,9 @@ services:
     volumes:
        - "./producer:/app"
     working_dir: "/app"
+    cpuset: '1'
+    cpu_percent: 10
+
 
   consumer:
     image: clojure:openjdk-8-lein
@@ -18,7 +21,8 @@ services:
     ports:
       - "3001:3001"
     cpuset: '1'
-          
+    cpu_percent: 10
+    
 
   client:
     image: node:12
@@ -29,3 +33,5 @@ services:
     working_dir: "/app"
     ports:
       - "3002:3002"
+    cpuset: '1'
+    cpu_percent: 10
