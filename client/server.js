@@ -26,6 +26,6 @@ app.get('/short', ({ query }, res) => {
   })
 })
 
-app.listen('3000', () => {
-  console.log('[http-client] listening at :3000')
+app.listen('3002', () => {
+  console.log('[http-client] listening at :3002')
 })

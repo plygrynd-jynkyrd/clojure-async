@@ -20,7 +20,7 @@
         (request-handler id type (create-send-callback httpExchange id))))))
  
 (defn create-server [request-handler]
-  (let [socket (new InetSocketAddress (int 3002))
+  (let [socket (new InetSocketAddress (int 3001))
         server (HttpServer/create socket 0)]
     (doto server
       (.createContext "/listen" (my-handler request-handler))

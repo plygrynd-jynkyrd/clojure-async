@@ -1,0 +1,31 @@
+version: "2"
+services:
+  producer:
+    image: node:12
+    container_name: producer
+    command: bash -c "npm install && npm start"
+    volumes:
+       - "./producer:/app"
+    working_dir: "/app"
+
+  consumer:
+    image: clojure:openjdk-8-lein
+    container_name: consumer
+    command: bash -c "lein clean && lein compile && lein run"
+    volumes:
+       - "./consumer:/app"
+    working_dir: "/app"
+    ports:
+      - "3001:3001"
+    cpuset: '1'
+          
+
+  client:
+    image: node:12
+    container_name: client
+    command: bash -c "npm install && npm start"
+    volumes:
+       - "./client:/app"
+    working_dir: "/app"
+    ports:
+      - "3002:3002"

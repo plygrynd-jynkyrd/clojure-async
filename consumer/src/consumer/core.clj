@@ -23,6 +23,6 @@
   (do
     (server/create-server consumer-request-handler-async)
     ;(server/create-server consumer-request-handler)
-    (println "[consumer] server listening at :3002")))
+    (println "[consumer] server listening at :3001")))
   
 

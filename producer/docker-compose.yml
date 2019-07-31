@@ -1,5 +1,0 @@
-version: "3"
-services:
-  image: openjdk-8-lein
-  clojure-consumer:
-  command: bash -c "lein run"

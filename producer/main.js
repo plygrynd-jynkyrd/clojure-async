@@ -4,7 +4,7 @@ const get = (path, id) => new Promise((resolve, reject) => {
   const start = new Date()
 
   request({
-    url: `http://localhost:3002/listen?${path}=${id}`,
+    url: `http://consumer:3001/listen?${path}=${id}`,
     method: 'GET',
     qs: {  }
   }, (err, data) => {
