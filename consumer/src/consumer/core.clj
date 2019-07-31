@@ -21,6 +21,7 @@
   "receive multiple http requests from consumer"
   [& args]
   (do
+    (println (str "[consumer] avaiable processors: " (.availableProcessors (java.lang.Runtime/getRuntime))))
     (server/create-server consumer-request-handler-async)
     ;(server/create-server consumer-request-handler)
     (println "[consumer] server listening at :3001")))
